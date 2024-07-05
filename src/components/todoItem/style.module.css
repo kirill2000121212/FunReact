@@ -1,0 +1,38 @@
+.TodoItem {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px;
+    align-items: center;
+    border: 1px solid #130526;
+}
+
+.TodoItemWrapper{
+    display: flex;
+    gap: 20px;
+}
+
+.TodoItemWrapperText{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.TodoItemWrapperText hr {
+    background-color: white;
+    border: none;
+    height: 1px;
+    width: 200px;
+}
+
+.TodoItemWrapperText h2{
+    font-family: "Inter";
+    color: black;
+    font-size: 18px;
+    padding: 5px 0;
+}
+
+.TodoItemWrapperText p{
+    font-family: "Inter";
+    font-size: 15px;
+    padding: 5px 0;
+}
