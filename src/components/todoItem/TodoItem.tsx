@@ -3,8 +3,8 @@ import Cross from '../../assets/img/cross-mark-button-svgrepo-com.svg'
 import {Checkbox, ConfigProvider} from "antd";
 import {Button} from "antd"
 
+const TodoItem = ({id, title,deleteTodo}) => {
 
-const TodoItem = ({id, title}) => {
     return (
         <div className={style.TodoItem}>
             <div className={style.TodoItemWrapper}>
@@ -26,6 +26,7 @@ const TodoItem = ({id, title}) => {
                     }}>
                     <Button
                         icon={<img src={Cross} alt="Cross"/>}
+                        onClick={deleteTodo}
                     />
                 </ConfigProvider>
         </div>

@@ -2,7 +2,7 @@ import TodoHeader from "../todoHeader/TodoHeader.tsx";
 import style from './style.module.css'
 import TodoList from "../todoList/TodoList.tsx";
 
-const TodoWrapper = () => {
+const Todo = () => {
     return (
         <div className={style.TodoWrapper}>
             <TodoHeader/>
@@ -11,4 +11,4 @@ const TodoWrapper = () => {
     );
 };
 
-export default TodoWrapper;
+export default Todo;

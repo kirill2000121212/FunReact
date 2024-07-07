@@ -1,7 +1,12 @@
 import ReactDOM from 'react-dom/client'
 import './main.css'
-import TodoWrapper from "./components/todoWrapper/TodoWrapper.tsx";
+import Todo from "./components/todo/Todo.tsx";
+import { Provider } from 'react-redux'
+import { store } from './store/store.js'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-    <TodoWrapper />
+<Provider store={store}>
+    <Todo/>
+</Provider>
 )
+

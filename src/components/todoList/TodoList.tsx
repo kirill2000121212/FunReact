@@ -1,30 +1,27 @@
 import style from './style.module.css'
 import TodoItem from "../todoItem/TodoItem.tsx";
-import {useEffect, useState} from "react";
+import {useGetTodosQuery} from "../../store/todosApi.js";
 
 const TodoList = () => {
+    const {data = [],isLoading} = useGetTodosQuery()
 
-    const [todos, setTodos] = useState([])
-
-    const logTodos = async () => {
-        try {
-            const response = await fetch('https://jsonplaceholder.typicode.com/todos')
-            const date = await response.json()
-            setTodos(date)
-        } catch (error) {
-            console.log(error.message)
-        }
+    const deleteTodo = (valueId) => {
+        return data.filter(({id}) => {
+            return valueId !== id
+        })
     }
-
-    useEffect(() => {
-        logTodos()
-    }, [])
 
     return (
         <div className={style.TodoList}>
             {
-                todos.map(({id, title}) => (
-                    <TodoItem id={id} title={title}/>
+                isLoading ? <h1 className={style.isLoadingText}>Грузится...</h1> :
+                data.map(({id, title}) => (
+                    <TodoItem
+                        key={id}
+                        id={id}
+                        title={title}
+                        deleteTodo={() => data(deleteTodo(id))}
+                    />
                 ))
             }
         </div>
