@@ -1,7 +1,7 @@
 .TodoItem {
     display: flex;
     justify-content: space-between;
-    padding: 10px 10px;
+    padding: 20px;
     align-items: center;
     border: 1px solid #130526;
 }
@@ -35,4 +35,9 @@
     font-family: "Inter";
     font-size: 15px;
     padding: 5px 0;
+}
+
+.trash{
+    margin-right: 20px;
+    color: ;
 }

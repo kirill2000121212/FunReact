@@ -1,24 +1,31 @@
-@font-face {
-    font-family: "Deelishes";
-    src: url("https://db.onlinewebfonts.com/t/a628dc62991a9f1744b823be360146bb.eot");
-    src: url("https://db.onlinewebfonts.com/t/a628dc62991a9f1744b823be360146bb.eot?#iefix")format("embedded-opentype"),
-    url("https://db.onlinewebfonts.com/t/a628dc62991a9f1744b823be360146bb.woff2")format("woff2"),
-    url("https://db.onlinewebfonts.com/t/a628dc62991a9f1744b823be360146bb.woff")format("woff"),
-    url("https://db.onlinewebfonts.com/t/a628dc62991a9f1744b823be360146bb.ttf")format("truetype"),
-    url("https://db.onlinewebfonts.com/t/a628dc62991a9f1744b823be360146bb.svg#Deelishes")format("svg");
-}
-
 .todoHeader{
     background: #130526;
     color: white;
-    font-family: "Deelishes";
-    font-size: 50px;
     padding: 30px 50px;
-    font-weight: 400;
-}
-
-.todoHeaderText{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+}
+
+.todoHeader h1{
+    font-size: 50px;
+    font-weight: 400;
+    transform: rotate(-10deg);
+    padding-right: 80px;
+}
+
+.todoHeaderAddTodo{
+    font-family: 'Inter';
+    font-size: 20px;
+    font-weight: 400;
+    display: flex;
+    gap: 20px;
+    position: relative;
+}
+
+.redoIcon {
+    transform: rotate(-190deg);
+    position: absolute;
+    bottom: -20px;
+    left: 40px;
 }

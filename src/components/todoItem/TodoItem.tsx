@@ -1,16 +1,17 @@
 import style from './style.module.css'
-import Cross from '../../assets/img/cross-mark-button-svgrepo-com.svg'
 import {Checkbox, ConfigProvider} from "antd";
 import {Button} from "antd"
+import DeleteIcon from '@mui/icons-material/Delete';
+import {FC} from "react";
+import {TYPE_TODO_ITEM} from "./type.ts";
 
-const TodoItem = ({id, title,deleteTodo}) => {
-
+const TodoItem: FC<TYPE_TODO_ITEM> = ({date, title,deleteTodo}) => {
     return (
         <div className={style.TodoItem}>
             <div className={style.TodoItemWrapper}>
                     <Checkbox />
                 <div className={style.TodoItemWrapperText}>
-                    <h2>{id}</h2>
+                    <h2>{date}</h2>
                     <hr/>
                     <p>{title}</p>
                 </div>
@@ -21,11 +22,15 @@ const TodoItem = ({id, title,deleteTodo}) => {
                             Button: {
                                 colorBorder: 'none',
                                 colorBgContainer: 'none',
+                                defaultColor: 'white',
+                                defaultHoverBorderColor: 'none',
+                                defaultHoverColor: '#130526'
                             },
                         },
                     }}>
                     <Button
-                        icon={<img src={Cross} alt="Cross"/>}
+                        className={style.trash}
+                        icon={<DeleteIcon sx={{fontSize: 30}}/>}
                         onClick={deleteTodo}
                     />
                 </ConfigProvider>
